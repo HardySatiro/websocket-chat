@@ -4,12 +4,12 @@
 ## Local
 
 #### Environment
-    conda create -n websocket python=3.7
+    conda create -n websocket python=3.9
     conda activate websocket
-    uvicorn example:app
+    pip install -r requirements.txt
 
 #### Run 
-    gtoken=`gcloud auth print-identity-token` && python main.py --mode test --version "0.0.0" --token $gtoken --model-version "0.0.0"
+    uvicorn wsgi:app --host "0.0.0.0" --port 9191 --workers 1 --reload
 
 ## Docker 
 

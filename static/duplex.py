@@ -29,8 +29,7 @@ if window.location.protocol == "https:":
     ws_scheme = "wss://"
 else:
     ws_scheme = "ws://"
-
+print(f'{ws_scheme}{window.location.host}/ws/duplex/{user}')
 ws = websocket.WebSocket(f'{ws_scheme}{window.location.host}/ws/duplex/{user}')
-
 ws.bind('message', on_message)
 ws.bind('open', on_open)
